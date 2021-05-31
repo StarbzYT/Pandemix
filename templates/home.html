@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://ez-css.vercel.app/">
+
+<style>
+h2 {
+   text-align: center;
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(53, 107, 255), rgb(0, 61, 173));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 3px solid #1783ff;
+  text-align: left;
+  padding: 40px;
+  width: 50%;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: #1783ff;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Global COVID-19 Information</h2>
+
+<table>
+  <tr>
+    <td>Confirmed Cases</td>
+    <td>{{ cases }}</td>
+  </tr>
+  <tr>
+    <td>Total Deaths</td>
+    <td>{{ deaths }}</td>
+  </tr>
+  <tr>
+    <td>Total Recovered</td>
+    <td>{{ recovered }}</td>
+  </tr>
+  <tr>
+   <td>Vaccinated</td>
+   <td>{{ vaccinated }}</td>
+
+</table>
+<footer>
+   <p>Author: Starbz<br>
+   Visit <a href="https://covidvax.live/">CovidVax</a> for more information</p>
+ </footer>
+
+</body>
+</html>
