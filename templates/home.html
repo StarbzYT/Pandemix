@@ -1,12 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://ez-css.vercel.app/">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-h2 {
+h3 {
    text-align: center;
   font-size: 72px;
   background: -webkit-linear-gradient(rgb(73, 121, 255), rgb(0, 85, 243));
@@ -30,38 +29,12 @@ td, th {
 tr:nth-child(even) {
   background-color: white;
 }
-footer {
-  text-align: center;
-  padding: 5px;
-  background-color: #1783ff;
-  color: white;
-}
-.navbar-custom.nav.navbar-nav {
-   color: white;
-   height: 200px;
-}
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
+
 </style>
 </head>
 <body>
-   <nav class="navbar-custom navbar navbar-light">
-      <div class="container-fluid">
-        <div>
-          <a href="https://vancouver.ca/news-calendar/stay-home-stay-put-and-help-flatten-vancouvers-curve.aspx">COVID Tracer</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="">Global</a></li>
-          <li><a href="#">Search</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Graphs</a></li>
-        </ul>
-      </div>
-    </nav>
-<h2>Global COVID-19 Information</h2>
+
+<h3>Global COVID-19 Information</h3>
 
 <table>
   <tr>
@@ -81,10 +54,6 @@ a:link {
    <td>{{ vaccinated }}</td>
 
 </table>
-<footer>
-   <p>Author: Starbz<br>
-   Visit <a href="https://covidvax.live/"><strong>CovidVax</strong></a> for more information</p>
- </footer>
-
 </body>
 </html>
+{% endblock %}
