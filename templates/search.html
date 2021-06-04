@@ -107,7 +107,7 @@ form {
 <h3>Search Country COVID-19 Data</h3>
 
 <!--Make sure the form has the autocomplete function switched off:-->
-<form autocomplete="off" action="{{url_for('search')}}">
+<form autocomplete="off" action="{{url_for('search')}}" method = "POST">
   <div class="autocomplete" style="width:300px;">
     <input id="myInput" type="text" name="myCountry" placeholder="Country">
   </div><br>
@@ -116,12 +116,12 @@ form {
 
 <div class="card" style="width: 50rem;">
    <div class="card-body">
-     <h5 class="card-title">CountryName</h5>
+      <h5 class="card-title">{{ country }}</h5>
    </div>
    <ul class="list-group list-group-flush">
-     <li class="list-group-item">An item</li>
-     <li class="list-group-item">A second item</li>
-     <li class="list-group-item">A third item</li>
+        <li class="list-group-item">Cases: {{ cases }}</li>
+        <li class="list-group-item">Deaths: {{ deaths }}</li>
+     <li class="list-group-item">Recovered: {{ recovered }}</li>
    </ul>
    <div class="card-body">
      <a href="https://coronavirus.jhu.edu/data/new-cases" class="card-link">Learn more</a>

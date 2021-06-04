@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 from bs4 import BeautifulSoup
+import datetime
 
 # helper class with helper methods
 class Helper:
@@ -24,6 +25,19 @@ class Helper:
       total_recovered = global_data["TotalRecovered"]
       return tuple([confirmed_cases, total_deaths, total_recovered])
 
+   def country_data(self):
+      country = request.form.get("myCountry")
+      # get current date (when this script is run)
+      get_date = str(datetime.datetime.now())
+      current_date = get_date.split()[0]
+      url = f"https://api.covid19api.com/country/{country}?from={current_date}T00:00:00Z&to={current_date}T00:00:00Z"
+      # grab last index of json dict to get most recent data
+      country_data = requests.get(url).json()[-1]
+      confirmed_cases = country_data["Confirmed"]
+      deaths = country_data["Deaths"]
+      recovered = country_data["Recovered"]
+      return tuple([confirmed_cases, deaths, recovered])
+
 # instantiate app
 app = Flask(__name__)
 
@@ -41,11 +55,16 @@ def home():
       deaths=total_deaths,
       recovered=total_recovered)
 
-@app.route('/search', methods=["GET", "POST"])
+@app.route('/search/', methods=["POST", "GET"])
 def search():
-   if request.method == "POST":
-      country = request.form.get("myCountry")
-   return render_template("search.html")
+   if request.method == 'POST':
+      new_country = request.form.get("myCountry")
+      helper = Helper()  # instantiate helper class
+      confirmed_cases = helper.country_data()[0]
+      deaths = helper.country_data()[1]
+      recovered = helper.country_data()[2]
+      return render_template("search.html", country=new_country, cases=confirmed_cases, deaths=deaths, recovered=recovered)
+   return render_template("search.html", country="Select a Country", cases="Select a Country", deaths="Select a Country", recovered="Select a Country" )
 
 # only run if this file is called
 if __name__ == '__main__':
