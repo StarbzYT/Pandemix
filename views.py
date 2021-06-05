@@ -134,7 +134,7 @@ def search():
 def graph():
    helper = Helper()
    graph = helper.display_graph()
-   return render_template("graph.html")
+   return render_template("graph.html", graph=graph)
 
 # only run if this file is called
 if __name__ == '__main__':
