@@ -4,9 +4,9 @@
 
 ## **About**
 
-This website was made with **Python** (_flask framework_), **HTML**, **CSS**, and **BootStrap**. The user can:
+This website was made with **Python** (_flask framework_), **HTML**, **CSS**, **BootStrap**, and the [PostMan COVID-19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#00030720-fae3-4c72-8aea-ad01ba17adf8 "COVID API"). The user can:
 
-> - View a _**global**_ COVID _cases_, _deaths_, _recovered_, and _fully vaccinated_ (2 doses).
+> - View _**global**_ COVID _cases_, _deaths_, _recovered_, and _fully vaccinated_ (2 doses).
 > - _**Search**_ any country's COVID _cases_, _deaths_, and _recovered_.
 > - Analyze top-country's _**vaccination**_ projections (US, UK, Canada, China).
 
@@ -26,7 +26,7 @@ I decided to change the "history" endpoint to "Vaccination Graph". As a result, 
 
 ![home covid tracer](https://user-images.githubusercontent.com/57025422/120943735-a0a65d80-c6e5-11eb-8ee4-57004940fc1e.PNG)
 
-The data used in the table was grabbed from a _COVID-API_.
+The data used in the table was grabbed from the _COVID-API_.
 
 ### 'Search' Endpoint
 
@@ -48,7 +48,7 @@ Using _matplotlib_ for this website sometimes caused a 'RuntimeError'. Instead, 
 
 After making this website, I realized it would have been easier to use 'Flask-Bootstrap', which would have taken care of the _links_ and _jquery_ scripts for me.
 
-If you use the website, you will notice that, at times, the website is quite slow. I believe that my HTML templates are waiting for the API calls to display the information. Simplifying the number of operations on some of the endpoints would decrease loading times.
+If you use the website, you will notice that, at times, the website is quite slow. I believe that my HTML templates are waiting for the API calls to display the information. Simplifying the number of operations on some of the backend endpoints would decrease loading times.
 
 ---
 
@@ -90,4 +90,4 @@ python views.py
 
 ### **Inspiration**
 
-Last year (just after the pandemic began), I made a simple **web scraper** that scraped the cases, deaths, and recovered off [WorldoMeters](https://www.worldometers.info/coronavirus/?utm_campaign=homeAdvegas1 "The website I scraped"), and inserted them into a _SQLite3_ database. Since then, I wanted to create a new version of the app, but with a **frontend** and **backend**. You can view my first version of this project [here](https://github.com/StarbzYT/Covid-App "Simple Covid Scraper").
+Last year (just after the pandemic began), I made a simple **web scraper** that scraped the cases, deaths, and recovered off [WorldoMeters](https://www.worldometers.info/coronavirus/?utm_campaign=homeAdvegas1 "The website I scraped"), and inserted them into a _SQLite3_ database. Since then, I wanted to create a new version of the app, but with a **frontend** and **backend**. You can view my first/original version of this project [here](https://github.com/StarbzYT/Covid-App "Simple Covid Scraper").
